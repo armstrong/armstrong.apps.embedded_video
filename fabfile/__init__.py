@@ -13,7 +13,7 @@ settings = {
         'armstrong.apps.embedded_video',
     ),
     'AUTH_PROFILE_MODULE': 'arm_content_support.SimpleProfile',
-    'ROOT_URLCONF': '',
+    'ROOT_URLCONF': 'armstrong.core.arm_content.tests.arm_content_support.urls',
     'ARMSTRONG_EXTERNAL_VIDEO_BACKEND': 'armstrong.core.arm_content.video.backends.YouTubeBackend'
 }
 
@@ -31,10 +31,7 @@ def pep8():
 @task
 def test():
     with html_coverage_report():
-        try:
-            run_tests(settings, 'arm_content_support', 'arm_content', 'embedded_video')
-        except Exception, e:
-            import ipdb;ipdb.set_trace()
+        run_tests(settings, 'arm_content_support', 'arm_content', 'embedded_video')
 
 
 @task
