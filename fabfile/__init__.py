@@ -35,9 +35,24 @@ def test():
 
 
 @task
-def runserver():
+def syncdb():
     from d51.django.virtualenv.base import VirtualEnvironment
     runner = VirtualEnvironment()
     runner.run(settings)
     runner.call_command("syncdb")
+
+
+@task
+def runserver():
+    from d51.django.virtualenv.base import VirtualEnvironment
+    runner = VirtualEnvironment()
+    runner.run(settings)
     runner.call_command("runserver")
+
+
+@task
+def shell():
+    from d51.django.virtualenv.base import VirtualEnvironment
+    runner = VirtualEnvironment()
+    runner.run(settings)
+    runner.call_command("shell")
