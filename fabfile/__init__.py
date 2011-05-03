@@ -11,6 +11,7 @@ settings = {
         'armstrong.core.arm_content',
         'armstrong.core.arm_content.tests.arm_content_support',
         'armstrong.apps.embedded_video',
+        'south',
     ),
     'AUTH_PROFILE_MODULE': 'arm_content_support.SimpleProfile',
     'ROOT_URLCONF': 'armstrong.core.arm_content.tests.arm_content_support.urls',
@@ -40,7 +41,7 @@ def syncdb():
     runner = VirtualEnvironment()
     runner.run(settings)
     runner.call_command("syncdb")
-
+    runner.call_command("migrate")
 
 @task
 def runserver():
@@ -56,3 +57,10 @@ def shell():
     runner = VirtualEnvironment()
     runner.run(settings)
     runner.call_command("shell")
+
+@task
+def create_migration(name):
+    from d51.django.virtualenv.base import VirtualEnvironment
+    runner = VirtualEnvironment()
+    runner.run(settings)
+    runner.call_command("schemamigration", "embedded_video", name, initial=True)
