@@ -4,6 +4,7 @@ from armstrong.core.arm_content.fields import EmbeddedVideoField
 # TODO: update to new locatoin
 from armstrong.core.arm_content.publication.models import PublicationMixin
 
+from django.contrib.sites.models import Site
 from django.db import models
 
 from . import settings
@@ -18,6 +19,7 @@ class EmbeddedVideoBase(AuthorsMixin, EmbeddedVideoMixin, PublicationMixin,
 
     # TODO: screen cap thumbnail
     screencap_url = models.URLField()
+    sites = models.ManyToManyField(Site)
 
     class Meta:
         abstract = True
