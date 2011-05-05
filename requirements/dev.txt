@@ -1,0 +1,2 @@
+-e git://github.com/tswicegood/fabric.git#egg=fabric
+-e git://github.com/armstrongcms/armstrong.dev.git#egg=armstrong.dev
