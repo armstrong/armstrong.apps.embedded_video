@@ -7,6 +7,7 @@ def create_concrete_table(func):
     style = no_style()
     seen_models = connection.introspection.installed_models(
             connection.introspection.table_names())
+
     def inner(self, *args, **kwargs):
         func(self, *args, **kwargs)
         sql, _references = connection.creation.sql_create_model(self.model,
@@ -22,6 +23,7 @@ def destroy_concrete_table(func):
     # Assume that there are no references to destroy, these are supposed to be
     # simple models
     references = {}
+
     def inner(self, *args, **kwargs):
         func(self, *args, **kwargs)
         sql = connection.creation.sql_destroy_model(self.model, references,
