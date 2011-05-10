@@ -13,6 +13,7 @@ settings = {
         'armstrong.core.arm_content.tests.arm_content_support',
         'armstrong.apps.content',
         'armstrong.apps.embedded_video',
+        'reversion',
         'south',
     ),
     'SITE_ID': 1,

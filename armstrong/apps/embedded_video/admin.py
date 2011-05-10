@@ -1,9 +1,10 @@
 from django.contrib import admin
+from reversion.admin import VersionAdmin
 
 from . import models
 
 
-class EmbeddedVideoAdmin(admin.ModelAdmin):
+class EmbeddedVideoAdmin(VersionAdmin):
     fieldsets = (
         (None, {
             'fields': ('title', 'summary', 'video', 'sites', ),
