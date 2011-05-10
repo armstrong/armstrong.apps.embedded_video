@@ -6,7 +6,7 @@ from . import models
 class EmbeddedVideoAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('title', 'video', 'sites', ),
+            'fields': ('title', 'summary', 'video', 'sites', ),
         }),
 
         # TODO: Refactor this into a fieldset_for(some_model) method so it can
