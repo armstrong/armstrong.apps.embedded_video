@@ -30,7 +30,8 @@ setup(
     # TODO: generate this dynamically
     packages=packages,
     install_requires=[
-        'distribute',
+        'django-reversion==0.4',
+        'armstrong.apps.content',
     ],
 
     classifiers=[
