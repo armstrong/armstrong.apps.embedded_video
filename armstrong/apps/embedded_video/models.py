@@ -1,8 +1,7 @@
+from armstrong.apps.content.models import Content
 from armstrong.core.arm_content.mixins import AuthorsMixin
 from armstrong.core.arm_content.mixins import EmbeddedVideoMixin
 from armstrong.core.arm_content.fields import EmbeddedVideoField
-# TODO: update to new locatoin
-from armstrong.core.arm_content.publication.models import PublicationMixin
 
 from django.contrib.sites.models import Site
 from django.db import models
@@ -10,9 +9,7 @@ from django.db import models
 from . import settings
 
 
-class EmbeddedVideoBase(AuthorsMixin, EmbeddedVideoMixin, PublicationMixin,
-        models.Model):
-    title = models.CharField(max_length=255)
+class EmbeddedVideoBase(Content, EmbeddedVideoMixin, models.Model):
     aspect_ratio = models.CharField(max_length=5,
             choices=settings.ASPECT_RATIOS,
             default=settings.DEFAULT_ASPECT_RATIO)

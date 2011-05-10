@@ -11,6 +11,7 @@ settings = {
         'django.contrib.sites',
         'armstrong.core.arm_content',
         'armstrong.core.arm_content.tests.arm_content_support',
+        'armstrong.apps.content',
         'armstrong.apps.embedded_video',
         'south',
     ),
