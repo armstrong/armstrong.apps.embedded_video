@@ -3,7 +3,6 @@ from armstrong.core.arm_content.mixins import AuthorsMixin
 from armstrong.core.arm_content.mixins import EmbeddedVideoMixin
 from armstrong.core.arm_content.fields import EmbeddedVideoField
 
-from django.contrib.sites.models import Site
 from django.db import models
 
 from . import settings
@@ -16,7 +15,6 @@ class EmbeddedVideoBase(Content, EmbeddedVideoMixin, models.Model):
 
     # TODO: screen cap thumbnail
     screencap_url = models.URLField()
-    sites = models.ManyToManyField(Site)
 
     class Meta:
         abstract = True
