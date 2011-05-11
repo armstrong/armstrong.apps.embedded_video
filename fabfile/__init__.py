@@ -23,6 +23,6 @@ settings = {
 }
 
 main_app = "embedded_video"
-tested_apps = ("arm_content_support", "arm_content", main_app, )
+tested_apps = (main_app, )
 
 
