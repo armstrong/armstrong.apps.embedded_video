@@ -1,1 +1,3 @@
--e git://github.com/tswicegood/armstrong.core.arm_content@embedded-videos#egg=armstrong.core.arm_content
+-e git://github.com/tswicegood/armstrong.core.arm_content@base-content#egg=armstrong.core.arm_content
+-e git://github.com/tswicegood/armstrong.apps.content@initial#egg=armstrong.apps.content
+django-reversion==0.4
