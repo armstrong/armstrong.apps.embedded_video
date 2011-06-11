@@ -25,8 +25,8 @@ setup(
     version='0.0.1a',
     description='Embedded Video within Armstrong',
     author='Bay Citizen and Texas Tribune',
-    author_email='all@armstrongcms.org',
-    url='http://github.com/armstrongcms/armstrong.apps.embedded_video/',
+    author_email='dev@armstrongcms.org',
+    url='http://github.com/armstrong/armstrong.apps.embedded_video/',
     # TODO: generate this dynamically
     packages=packages,
     install_requires=[
