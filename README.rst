@@ -17,7 +17,7 @@ Installation
 ::
 
     name="armstrong.apps.embedded_video"
-    pip install -e git://github.com/texastribune.org/$name#egg=$name
+    pip install -e git://github.com/armstrong/$name#egg=$name
 
 
 Contributing
